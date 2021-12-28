@@ -2,7 +2,7 @@
 
 <h1>Bands</h1>
 
-<table>
+<table id="bands">
 	<thead>
 		<tr>
 			<th>Name</th>
@@ -10,19 +10,12 @@
 		</tr>
 	</thead>
 	<tbody>
-		<% @bands.each do |band| %>
-			<tr>
-				<td><% band.name %></td>
-				<td><%= link_to 'show', band %></td>
-				<td><%= link_to 'edit', edit_band_path(band) %></td>
-				<td><%= link_to 'destroy', band, method: :delete, data: { confirm: "Are you sure ?", remote: true}, class: "delete" %></td>
-			</tr>
-		<% end %>
+		<%= render @bands  %>	
 	</tbody>
 </table>
 
 <br>
 
 <div id="new-band">
-	<td><%= link_to 'new band', new_band_path, remote: true %></td>
+	<%= link_to 'new band', new_band_path, remote: true %>
 </div>
