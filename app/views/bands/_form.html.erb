@@ -1,0 +1,18 @@
+<%= simple_form_for @band, remote: true do |f|  %>
+  <div class="row">
+    <div class="col-12">
+      <label for="supplier_name" style="font-weight: bold; font-size: 13px;">Nom du groupe :</label>
+      <%= f.input :name, label: false %>
+
+    </div>
+  </div>
+   <div class="">
+     <% if controller.action_name == 'edit' %>
+          <%= link_to band_path(@band), class: 'btn btn-outline-secondary' do %> Annuler
+          <% end %>
+      <% else %>
+          <%= link_to bands_path, class: 'btn btn-outline-secondary' do %> Annuler <% end %>
+      <% end %>
+    <%= f.button :submit, "Valider", class: 'btn btn-flat' %>
+  </div>
+<% end %>

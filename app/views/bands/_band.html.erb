@@ -1,0 +1,6 @@
+<tr>
+	<td><%= band.name %></td>
+	<td><%= link_to 'show', band %></td>
+	<td><%= link_to 'edit', edit_band_path(band) %></td>
+	<td><%= link_to 'destroy', band, method: :delete, data: { confirm: "Are you sure ?", remote: true}, class: "delete" %></td>
+</tr>
